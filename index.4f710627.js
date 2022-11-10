@@ -1,0 +1,2 @@
+fetch("https://restcountries.com/v3.1/all").then((t=>{if(!t.ok)throw new Error(t.status);return t.json()})).catch((t=>console.log("Error just hapend"))).then((t=>{t.map((t=>(console.log(t.flags.svg),'<p class="country-list__text">\n        <img\n          class="country-list__img"\n          src="https://flagcdn.com/ai.svg"\n          width="150px"\n          height="100px"\n          alt=""\n        />\n        Country Name\n      </p>'))).join("")}));
+//# sourceMappingURL=index.4f710627.js.map
