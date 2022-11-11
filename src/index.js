@@ -10,12 +10,12 @@ const countryInfo = document.querySelector('.country-info');
 
 // refs = {};
 
-inputRef.addEventListener('input', onInputText);
+inputRef.addEventListener('input', debounce(onInputText, DEBOUNCE_DELAY));
 
 function onInputText(evt) {
   evt.preventDefault();
   // console.log(evt.currentTarget.value);
-  const inputValue = evt.currentTarget.value.trim();
+  const inputValue = evt.target.value.trim();
   console.log(inputValue);
 
   fetchCountries()
@@ -32,9 +32,9 @@ function onInputText(evt) {
     );
 }
 
-fetchCountries().then(r => {
-  const markup = r.map(country => {});
-});
+// fetchCountries().then(r => {
+//   const markup = r.map(country => {});
+// });
 
 function markupCountryList(countries) {
   const markup = countries
