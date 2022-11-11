@@ -1,2 +1,0 @@
-fetch("https://restcountries.com/v3.1/all").then((function(n){if(!n.ok)throw new Error(n.status);return n.json()})).catch((function(n){return console.log("Error just hapend")})).then((function(n){n.map((function(n){return console.log(n.flags.svg),'<p class="country-list__text">\n        <img\n          class="country-list__img"\n          src="https://flagcdn.com/ai.svg"\n          width="150px"\n          height="100px"\n          alt=""\n        />\n        Country Name\n      </p>'})).join("")}));
-//# sourceMappingURL=index.5895a6b9.js.map
