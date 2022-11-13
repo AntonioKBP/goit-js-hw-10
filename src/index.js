@@ -21,7 +21,7 @@ function onInputText(evt) {
 
   fetchCountries(name)
     .then(data => {
-      console.log(data);
+      // console.log(data);
       const countriesLength = data.length;
       if (countriesLength > 10) {
         return Notify.info(
@@ -55,21 +55,18 @@ function markupCountryList(countries) {
 
 function markupCountryInfo(countries) {
   const markup = countries
-    .map(country => {
+    .map(({ flags, name, capital, population, languages }) => {
+      console.log(Object.values(languages));
       return `<div class="country-info__header"><img class="country-info__flag" src="${
-        country.flags.svg
-      }" alt="" /><p class="country-info__country-name">${
-        country.name
-      }</p></div>
+        flags.svg
+      }" alt="${name}" /><p class="country-info__country-name">${name}</p></div>
       <ul class="country-info__item">
-      <li class="country-info__item"><p><b>Capital: </b>${country.capital}</p>
+      <li class="country-info__item"><p><b>Capital: </b>${capital}</p>
       </li>
-      <li class="country-info__item"><p><b>Population: </b>${
-        country.population
-      }</p>
+      <li class="country-info__item"><p><b>Population: </b>${population}</p>
       </li>
       <li class="country-info__item">
-      <p><b>Languages: </b>${Object.values(country.languages)}</p>
+      <p><b>Languages: </b>${Object.values(languages)}</p>
         </li>
       </ul>`;
     })
