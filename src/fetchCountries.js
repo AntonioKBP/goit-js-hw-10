@@ -10,5 +10,5 @@ function fetchCountries(name) {
       }
       return response.json();
     })
-    .catch(error => console.log('Error just hapend'));
+    .catch(error => console.log('Error just happened'));
 }

@@ -41,13 +41,13 @@ function onInputText(evt) {
 
 function markupCountryList(countries) {
   const markup = countries
-    .map(country => {
+    .map(({ flags, name }) => {
       return `<li class="country-list__item">
         <img
           class="country-list__flag"
-          src="${country.flags.svg}"
+          src="${flags.svg}"
           alt=""
-        /><p class="country-list__text">${country.name}</p</li>`;
+        /><p class="country-list__text">${name}</p</li>`;
     })
     .join('');
   countryList.innerHTML = markup;
