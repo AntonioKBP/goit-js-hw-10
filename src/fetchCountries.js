@@ -6,9 +6,9 @@ function fetchCountries(name) {
   )
     .then(response => {
       if (!response.ok) {
-        throw new Error(response.status);
+        throw new Error('404');
       }
       return response.json();
     })
-    .catch(error => console.log('Error just happened'));
+    .catch(error => Notify.failure('Oops, there is no country with that name'));
 }
