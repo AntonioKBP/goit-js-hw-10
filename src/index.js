@@ -66,7 +66,9 @@ function markupCountryInfo(countries) {
       <li class="country-info__item"><p><b>Population: </b>${population}</p>
       </li>
       <li class="country-info__item">
-      <p><b>Languages: </b>${Object.values(languages)}</p>
+      <p><b>Languages: </b>${languages.map(lang => {
+        return `${lang.name}`;
+      })}</p>
         </li>
       </ul>`;
     })

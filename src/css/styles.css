@@ -50,7 +50,7 @@ body {
 .country-list__flag {
   display: block;
   width: 80px;
-  margin: 10px;
+  margin: 5px;
 }
 .country-list__item {
   display: flex;
