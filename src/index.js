@@ -56,7 +56,6 @@ function markupCountryList(countries) {
 function markupCountryInfo(countries) {
   const markup = countries
     .map(({ flags, name, capital, population, languages }) => {
-      console.log(Object.values(languages));
       return `<div class="country-info__header"><img class="country-info__flag" src="${
         flags.svg
       }" alt="${name}" /><p class="country-info__country-name">${name}</p></div>
